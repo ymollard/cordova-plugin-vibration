@@ -23,7 +23,16 @@
 
 - (void)vibrate:(CDVInvokedUrlCommand*)command
 {
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    NSNumber *duration = [command argumentAtIndex:0];
+    if ([duration intValue] < 270) {
+        AudioServicesPlaySystemSound(1520);
+    } else {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    }
+    // 1520 : short
+    // 1521 : double short
+    // 1352 : long
+    // 4095 : long
 }
 
 @end
