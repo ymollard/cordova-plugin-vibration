@@ -35,4 +35,11 @@
     // 4095 : long
 }
 
+- (void)vibrateWithPattern:(CDVInvokedUrlCommand*)command
+{
+    AudioServicesPlaySystemSound(1521);
+    // 1521 : double short
+}
+
 @end
+
